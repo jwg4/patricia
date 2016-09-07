@@ -1,7 +1,7 @@
 all: result
 
-bitwise.o: bitwise.c bitwise.h
-	gcc bitwise.c -c
+bitwise.so: bitwise.c bitwise.h
+	gcc bitwise.c -shared -o bitwise.so
 
-result: test_bitwise.py bitwise.o
+result: test_bitwise.py bitwise.so
 	python -m unittest test_bitwise
