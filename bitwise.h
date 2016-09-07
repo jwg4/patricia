@@ -1,3 +1,3 @@
-typedef INTEGER signed int;
+typedef signed int INTEGER;
 
 INTEGER lowest_one(INTEGER);
