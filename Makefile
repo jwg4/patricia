@@ -1,7 +1,9 @@
-all: result
+all: result objects
 
-bitwise.so: bitwise.c bitwise.h
-	gcc bitwise.c -shared -o bitwise.so
+objects: bitwise.so radix_tree.so
+
+%.so: %.c %.h
+	gcc $< -shared -o $@
 
 result: test_bitwise.py bitwise.so
 	python -m unittest test_bitwise
